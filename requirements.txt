@@ -1,4 +1,5 @@
---extra-index-url https://download.pytorch.org/whl/cu124
+# ACC - comentado para no usar GPU
+# --extra-index-url https://download.pytorch.org/whl/cu124
 
 # Update above --extra-index-url according to your device.
 
