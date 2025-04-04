@@ -11,3 +11,6 @@ outputs/
 models/
 modules/yt_tmp.wav
 configs/default_parameters.yaml
+
+# ACC
+ssl/*.key
