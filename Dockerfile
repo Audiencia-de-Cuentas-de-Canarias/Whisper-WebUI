@@ -11,7 +11,11 @@ COPY requirements.txt .
 
 RUN python3 -m venv venv && \
     . venv/bin/activate && \
-    pip install -U -r requirements.txt
+    pip install -U pip && \
+    pip install "setuptools==71.1.0" wheel && \
+    pip install --no-build-isolation git+https://github.com/jhj0517/jhj0517-whisper.git && \
+    grep -v "jhj0517-whisper" requirements.txt > requirements_filtered.txt && \
+    pip install -U -r requirements_filtered.txt
 
 
 FROM debian:bookworm-slim AS runtime
