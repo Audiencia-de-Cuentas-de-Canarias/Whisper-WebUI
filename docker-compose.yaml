@@ -11,6 +11,9 @@ services:
       - ./models:/Whisper-WebUI/models
       - ./outputs:/Whisper-WebUI/outputs
       - ./configs:/Whisper-WebUI/configs
+      - ./ssl:/Whisper-WebUI/ssl
+
+    restart: always
 
     ports:
       - "7860:7860"
@@ -18,7 +21,7 @@ services:
     stdin_open: true
     tty: true
 
-    entrypoint: ["python", "app.py", "--server_port", "7860", "--server_name", "0.0.0.0",]
+    entrypoint: ["python", "app.py", "--server_port", "7860", "--server_name", "0.0.0.0", "--ssl_keyfile", "ssl/auditia.key", "--ssl_certfile", "ssl/auditia.crt", "--ssl_verify", "False",]
 
     # If you're not using nvidia GPU, Update device to match yours.
     # See more info at : https://docs.docker.com/compose/compose-file/deploy/#driver
