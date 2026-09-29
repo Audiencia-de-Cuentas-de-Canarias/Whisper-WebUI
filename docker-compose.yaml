@@ -25,16 +25,7 @@ services:
 
     # If you're not using nvidia GPU, Update device to match yours.
     # See more info at : https://docs.docker.com/compose/compose-file/deploy/#driver
-<<<<<<< HEAD
     # You can remove the entire `deploy' section if you are using CPU.
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [ gpu ]
-=======
     # deploy:
     #   resources:
     #     reservations:
@@ -42,4 +33,3 @@ services:
     #         - driver: nvidia
     #           count: all
     #           capabilities: [ gpu ]
->>>>>>> 9204be1 (feat(acc): personalizar para ssl y arranque sin gpu)
